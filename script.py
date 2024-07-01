@@ -7,7 +7,7 @@ fake = Faker()
 
 # Conexión a la base de datos
 conn = psycopg2.connect(
-    dbname='db1M',
+    dbname='dbmil',
     user='postgres',
     password='password',
     host='localhost',
@@ -148,7 +148,6 @@ def populate_boletos(num_records):
         )
 
 
-
 def populate_compras(num_records):
     cursor.execute("SELECT id_boleto, ruta_id FROM Boletos")
     boletos = cursor.fetchall()
@@ -188,9 +187,9 @@ def populate_r_finalizadas(num_records):
         n_embarque_s = random.randint(1, 100)
         n_embarque_l = random.randint(1, 100)
         fecha = fake.date_this_year()
-        duracion = fake.time()
+        duracion = None
         ingresos_gen = random.randint(1000, 10000)
-        distancia = random.randint(10, 500)
+        distancia = random.randint(10, 200)
         cursor.execute(
             """
             INSERT INTO R_Finalizadas (estacion_inicio, estacion_final, vehiculo_mat, hora_s, hora_l, n_embarque_s, n_embarque_l, fecha, duracion, ingresos_gen, distancia)
