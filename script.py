@@ -200,6 +200,7 @@ def populate_r_finalizadas(num_records):
 
 
 # Llamar a las funciones para poblar las tablas
+# 1M
 populate_sedes(10)
 populate_clientes(1000000)
 populate_conductores(10000)
@@ -209,6 +210,36 @@ populate_r_encurso(10000)
 populate_boletos(1000000)
 populate_compras(1000000)
 populate_r_finalizadas(10000)
+#100K
+populate_sedes(10)
+populate_clientes(100000)
+populate_conductores(1000)
+populate_vehiculos(1000)
+populate_estaciones(10)
+populate_r_encurso(1000)
+populate_boletos(100000)
+populate_compras(100000)
+populate_r_finalizadas(1000)
+#10K
+populate_sedes(10)
+populate_clientes(10000)
+populate_conductores(100)
+populate_vehiculos(100)
+populate_estaciones(10)
+populate_r_encurso(100)
+populate_boletos(10000)
+populate_compras(10000)
+populate_r_finalizadas(100)
+#1K
+populate_sedes(10)
+populate_clientes(1000)
+populate_conductores(100)
+populate_vehiculos(100)
+populate_estaciones(10)
+populate_r_encurso(100)
+populate_boletos(1000)
+populate_compras(1000)
+populate_r_finalizadas(100)
 
 # Confirmar los cambios en la base de datos
 conn.commit()
