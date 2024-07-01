@@ -128,6 +128,7 @@ def populate_r_encurso(num_records):
 def populate_boletos(num_records):
     cursor.execute("SELECT ID FROM R_EnCurso")
     rutas_ids = [row[0] for row in cursor.fetchall()]
+    categorias = ['estandar', 'vip', 'premium']
 
     boletos_ids = set()
     while len(boletos_ids) < num_records:
@@ -135,7 +136,7 @@ def populate_boletos(num_records):
 
     for id_boleto in boletos_ids:
         ruta_id = random.choice(rutas_ids)
-        categoria = f'Categoria {random.randint(1, 3)}'[:10]
+        categoria = random.choice(categorias)
         n_asiento = random.randint(1, 50)
         costo = random.randint(10, 100)
         cursor.execute(
@@ -145,6 +146,7 @@ def populate_boletos(num_records):
             """,
             (id_boleto, ruta_id, categoria, n_asiento, costo)
         )
+
 
 
 def populate_compras(num_records):
