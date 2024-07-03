@@ -105,3 +105,13 @@ DROP TABLE r_finalizadas;
 DROP TABLE r_encurso;
 DROP TABLE boletos;
 DROP TABLE compras;
+
+---- Desactivar indices ----
+
+SET enable_mergejoin TO OFF;
+SET enable_hashjoin TO OFF;
+SET enable_bitmapscan TO OFF;
+SET enable_sort TO OFF;
+
+--- Eliminar de caché ---
+VACUUM FULL;
